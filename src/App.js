@@ -5,7 +5,7 @@ import Joker from './Joker';
 
 function App() {
   const [btnText, setBtnText] = useState('Get a Joke');
-  const [joke, setJoke] = useState({});
+  const [joke, setJoke] = useState({setup: 'Got Jokes?', punchline: ''});
 
   const setButton = (text) => {
     setBtnText(text);
@@ -26,8 +26,8 @@ function App() {
     <>
       <Joker joke={joke} btnText={btnText}/>
       {btnText === 'Get a Joke' || btnText === 'Get a New Joke' ?
-        <button onClick={getAJoke}>{btnText}</button> :
-        <button onClick={() => setButton('Get a New Joke')}>{btnText}</button>}
+        <button id="get-joke-btn" onClick={getAJoke}>{btnText}</button> :
+        <button id="get-joke-btn" onClick={() => setButton('Get a New Joke')}>{btnText}</button>}
     </>
   );
 }
